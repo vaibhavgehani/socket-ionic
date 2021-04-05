@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="formData">
+    <ion-row>
+      <h2>
+        SignUp Using Credintials
+      </h2>
+    </ion-row>
+    <ion-row>
+      <ion-input type="text" [(ngModel)]="signupDetails.name" placeholder="Enter Name"></ion-input>
+    </ion-row>
+
+    <ion-row>
+      <ion-input type="text" [(ngModel)]="signupDetails.email" placeholder="Enter email ID"></ion-input>
+    </ion-row>
+
+    <ion-row>
+      <ion-input type="password" [(ngModel)]="signupDetails.password" placeholder="Enter Password"></ion-input>
+    </ion-row>
+
+    <ion-row>
+      <ion-button (click)="signup()" class="margin">
+        Signup
+      </ion-button>
+    </ion-row>
+  </ion-grid>
+
+  <h2 class="center">OR</h2>
+
+  <ion-grid class="formData">
+    <ion-row>
+      <h2>
+        Login Using Credintials
+      </h2>
+    </ion-row>
+
+    <ion-row>
+      <ion-input type="text" [(ngModel)]="loginDetails.email" placeholder="Enter email ID"></ion-input>
+    </ion-row>
+
+    <ion-row>
+      <ion-input type="password" [(ngModel)]="loginDetails.password" placeholder="Enter Password"></ion-input>
+    </ion-row>
+
+    <ion-row>
+      <ion-button (click)="login()" class="margin">
+        Login
+      </ion-button>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

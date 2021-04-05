@@ -1,0 +1,21 @@
+.mainContent {
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.btnClass {
+    flex: 1;
+    margin-top: 16px;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding: 8px 8px 8px 8px;
+}
+.feedbackCard {
+    width: 100%;
+    border-radius: 4px;
+    background-color: white;
+}

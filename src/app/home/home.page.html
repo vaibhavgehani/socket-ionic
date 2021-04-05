@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+     Notifications
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="relatedArticles">
+    <ion-item class="item" (click)="getInfo(item, i)" *ngFor="let item of relatedArticles;let i=index;">
+      <ion-thumbnail slot="start">
+        <img [src]="item.image">
+      </ion-thumbnail>
+      <ion-label *ngIf="!item.showMore">
+        {{trimData(item.email)}}
+      </ion-label>
+
+      <ion-label *ngIf="item.showMore">
+        {{item.email}}
+      </ion-label>
+      
+      <ion-label class="flexClass" slot="end">
+        <ion-button (click)="updateShowMore(i);$event.stopPropagation();" fill="clear">
+          <span *ngIf="!item.showMore">more</span>
+          <span *ngIf="item.showMore">less</span>
+        </ion-button>
+        <ion-label class="circle greenColor" *ngIf="item.readed" slot="end">
+          
+        </ion-label>
+  
+        <ion-label class="circle redColor" *ngIf="!item.readed" slot="end">
+          
+        </ion-label>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMoreData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
